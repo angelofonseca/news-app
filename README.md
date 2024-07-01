@@ -20,14 +20,14 @@ A aplicação permite aos usuários listar as notícias mais recentes, com a pos
 
 1. Para iniciar o servidor de desenvolvimento:
 
-  ```bash
+   ```bash
     npm run dev
 
 ## Build para produção
 
 1. Para criar e pré-visualizar uma build para produção:
 
-  ```bash
+   ```bash
   npm run build
   npm run preview
 
@@ -37,7 +37,7 @@ Neste projeto utilizei as configurações de lint da Trybe
 
 1. Para verificar problemas de lint:
 
-  ```bash
+   ```bash
   npm run lint
   npm run lint:fix
 
@@ -46,6 +46,6 @@ Neste projeto utilizei as configurações de lint da Trybe
   Este projeto foi inicializado com o Vite
 
 1. Para criar um repositório com a versão mais atualizada do Vite:
-  ```bash
+   ```bash
   npm create vite@latest
   
