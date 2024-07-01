@@ -21,15 +21,15 @@ A aplicação permite aos usuários listar as notícias mais recentes, com a pos
 1. Para iniciar o servidor de desenvolvimento:
 
    ```bash
-    npm run dev
+   npm run dev
 
 ## Build para produção
 
 1. Para criar e pré-visualizar uma build para produção:
 
    ```bash
-  npm run build
-  npm run preview
+   npm run build
+   npm run preview
 
 ## Rodando o ESLint (Trybe)
 
@@ -38,8 +38,8 @@ Neste projeto utilizei as configurações de lint da Trybe
 1. Para verificar problemas de lint:
 
    ```bash
-  npm run lint
-  npm run lint:fix
+   npm run lint
+   npm run lint:fix
 
 ## Vite
 
@@ -47,5 +47,5 @@ Neste projeto utilizei as configurações de lint da Trybe
 
 1. Para criar um repositório com a versão mais atualizada do Vite:
    ```bash
-  npm create vite@latest
+   npm create vite@latest
   
