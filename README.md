@@ -46,6 +46,6 @@ Neste projeto utilizei as configurações de lint da Trybe
   Este projeto foi inicializado com o Vite
 
 1. Para criar um repositório com a versão mais atualizada do Vite:
+
    ```bash
    npm create vite@latest
-  
