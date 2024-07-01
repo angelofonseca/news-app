@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# News App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A aplicação permite aos usuários listar as notícias mais recentes, com a possibilidade de filtrar por categorias ou palavras-chave específicas. Cada notícia exibida inclui um link para acesso direto, a data de publicação e uma opção para marcar como favorita. Tudo isso é possível graças à integração com a API gratuita de notícias do IBGE v3, garantindo informações constantes e precisas.
 
-Currently, two official plugins are available:
+## Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js v18.19.1
+- npm v10.2.4
 
-## Expanding the ESLint configuration
+## Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone o repositório:
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   git clone https://github.com/angelofonseca/news-app.git
+   cd news-app
+   npm i
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Modo de Desenvolvimento
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  npm run dev
+
+## Build para produção
+
+  npm run build
+  npm run preview
+
+## Rodando o ESLint (Trybe)
+
+  Neste projeto utilizei as configurações de lint da Trybe
+
+  npm run lint
+  npm run lint:fix
+
+## Vite
+
+  Este projeto foi inicializado com o Vite
+
+  Para criar um repositório com a versão mais atualizada do Vite:
+    npm create vite@latest
+  
