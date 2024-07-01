@@ -1,6 +1,13 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Header from './components/Header';
+
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <QueryClientProvider client={ queryClient }>
+      <Header />
+    </QueryClientProvider>
   );
 }
 
