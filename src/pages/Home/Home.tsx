@@ -2,6 +2,8 @@ import { useQuery } from 'react-query';
 import { useState } from 'react';
 import fetchNews from '../../services/fetchNews';
 import { mockFetchNews } from '../../utils/mockFetch';
+import HeroCard from '../../components/HeroCard/HeroCard';
+import './home.css';
 
 function Temp() {
   const [page, setPage] = useState(10);
@@ -22,7 +24,11 @@ function Temp() {
 
   return (
     <main>
-      {newsData?.map((news) => news.titulo)}
+      {newsData && (
+        <section className="hero-container">
+          <HeroCard { ...newsData[0] } />
+        </section>
+      )}
       <button
         onClick={ () => setPage((prevPage) => prevPage + 10) }
         aria-label="Carregar mais notícias"
