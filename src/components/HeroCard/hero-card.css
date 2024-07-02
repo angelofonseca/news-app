@@ -3,11 +3,11 @@
     width: 80%;
   }
 }
-
-.card-body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.hero-card-body {
+  width: 80%;
+}
+.hero-card-container {
+display: flex;
+justify-content: center;
+align-items: center;
 }

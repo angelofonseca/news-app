@@ -1,6 +1,7 @@
 import { useInfiniteQuery } from 'react-query';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 import { mockFetchNews } from '../../utils/mockFetch';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import './home.css';
@@ -20,9 +21,12 @@ function Home() {
   });
 
   const { ref, inView } = useInView();
+  const [favorite, isFavorite] = useState(false);
 
   useEffect(() => {
     if (inView) fetchNextPage();
+    const favoritesList = JSON.parse(localStorage.getItem('favorites') || '[]');
+    if (favoritesList.length) console.log('favorites');
   }, [inView, fetchNextPage]);
 
   if (isLoading) return <div>Loading...</div>;

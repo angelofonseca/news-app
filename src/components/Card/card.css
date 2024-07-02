@@ -6,6 +6,11 @@
   height: 10rem;
 }
 
+.card-body {
+display: flex;
+align-items: flex-start;
+}
+
 .news-card {
   width: 18rem;
   height: 16rem;
@@ -16,4 +21,44 @@
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.card-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.favorite-btn {
+  color: red;
+  font-size: 18px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.news-card-text::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+/* Style the scrollbar handle */
+.news-card-text::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 10px;
+}
+
+.news-card-text::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a0;
+}
+
+.news-card-text::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
