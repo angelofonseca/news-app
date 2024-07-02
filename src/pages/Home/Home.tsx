@@ -4,11 +4,13 @@ import fetchNews from '../../services/fetchNews';
 import { mockFetchNews } from '../../utils/mockFetch';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import './home.css';
+import Card from '../../components/Card/Card';
+import MoreNewsButton from '../../components/MoreNewsButton/MoreNewsButton';
 
 function Temp() {
-  const [page, setPage] = useState(10);
+  const [page, setPage] = useState(12);
   const { data: newsData, isLoading, isError } = useQuery({
-    queryFn: () => mockFetchNews(),
+    queryFn: () => fetchNews(page),
     queryKey: ['news', page],
   });
 
@@ -23,18 +25,20 @@ function Temp() {
   }
 
   return (
-    <main>
+    <main className="d-flex flex-column align-items-center mt-3 mb-3">
       {newsData && (
         <section className="hero-container">
-          <HeroCard { ...newsData[0] } />
+          <HeroCard news={ newsData[0] } />
         </section>
       )}
-      <button
-        onClick={ () => setPage((prevPage) => prevPage + 10) }
-        aria-label="Carregar mais notícias"
-      >
-        Get more news
-      </button>
+      <section className="row row-cols-1 row-cols-md-3 g-4 mt-5 news-section">
+        {newsData && newsData.slice(1).map((news) => (
+          <div className="col news-card" key={ news.id }>
+            <Card news={ news } />
+          </div>
+        ))}
+      </section>
+      <MoreNewsButton setPage={ setPage } />
     </main>
   );
 }
