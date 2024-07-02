@@ -1,0 +1,19 @@
+.card {
+  border: none;
+}
+
+.card-img {
+  height: 10rem;
+}
+
+.news-card {
+  width: 18rem;
+  height: 16rem;
+}
+
+.news-card-text {
+  max-height: 72px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

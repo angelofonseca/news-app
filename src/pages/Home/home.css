@@ -4,3 +4,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.news-section {
+  width: 80%;
+  justify-content: center;
+}
+
+hr {
+  border: solid 1px black;
+}

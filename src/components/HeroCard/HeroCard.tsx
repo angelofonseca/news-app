@@ -1,8 +1,8 @@
 import { Item } from '../../types';
 import './hero-card.css';
 
-function HeroCard(news: Item) {
-  const { imagens, titulo, introducao, destaque, link, data_publicacao: dataPublicacao } = news;
+function HeroCard({ news }: { news: Item }) {
+  const { imagens, titulo, introducao, link, data_publicacao: dataPublicacao } = news;
   const { image_intro: imagemIntro } = imagens;
   return (
     <div className="card mb-3 hero-card">
@@ -10,7 +10,7 @@ function HeroCard(news: Item) {
         <div className="col-md-5">
           <img
             src={ imagemIntro }
-            className="img-fluid rounded-start hero-img"
+            className="img-fluid rounded hero-img"
             alt="..."
           />
         </div>
