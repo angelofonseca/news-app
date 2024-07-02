@@ -8,7 +8,6 @@ export interface DataType {
   showingTo: number;
   items: InitialItem[];
 }
-
 export interface InitialItem {
   id: number;
   tipo: string;
@@ -23,7 +22,6 @@ export interface InitialItem {
   destaque: boolean;
   link: string;
 }
-
 export interface Item {
   id: number;
   tipo: string;
@@ -41,11 +39,4 @@ export interface Item {
 
 interface Imagens {
   image_intro: string;
-  float_intro: string;
-  image_intro_alt: string;
-  image_intro_caption: string;
-  image_fulltext: string;
-  float_fulltext: string;
-  image_fulltext_alt: string;
-  image_fulltext_caption: string;
 }

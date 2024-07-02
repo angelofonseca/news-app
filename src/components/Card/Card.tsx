@@ -1,4 +1,4 @@
-import { Item } from '../../types';
+import { InitialItem, Item } from '../../types';
 import './card.css';
 
 function Card({ news }: { news: Item }) {

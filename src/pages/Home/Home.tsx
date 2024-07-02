@@ -1,46 +1,58 @@
-import { useQuery } from 'react-query';
-import { useState } from 'react';
-import fetchNews from '../../services/fetchNews';
+import { useInfiniteQuery } from 'react-query';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 import { mockFetchNews } from '../../utils/mockFetch';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import './home.css';
 import Card from '../../components/Card/Card';
-import MoreNewsButton from '../../components/MoreNewsButton/MoreNewsButton';
+import fetchNews from '../../services/fetchNews';
 
-function Temp() {
-  const [page, setPage] = useState(12);
-  const { data: newsData, isLoading, isError } = useQuery({
-    queryFn: () => fetchNews(page),
-    queryKey: ['news', page],
+function Home() {
+  const {
+    data: newsData,
+    fetchNextPage,
+    isLoading,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
+    queryKey: ['newsData'],
+    queryFn: ({ pageParam = 1 }) => fetchNews(pageParam),
+    getNextPageParam: (lastPage) => lastPage?.nextPage,
   });
 
-  if (isLoading) return <h4>Carregando...</h4>;
+  const { ref, inView } = useInView();
 
-  if (isError) {
-    return (
-      <div>
-        <h4>Algo deu errado!</h4>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (inView) fetchNextPage();
+  }, [inView, fetchNextPage]);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
-    <main className="d-flex flex-column align-items-center mt-3 mb-3">
-      {newsData && (
+    <main className="d-flex flex-column align-items-center mt-3 mb-5">
+      {newsData?.pages[0]?.items[0] && (
         <section className="hero-container">
-          <HeroCard news={ newsData[0] } />
+          <HeroCard news={ newsData.pages[0]?.items[0] } />
         </section>
       )}
-      <section className="row row-cols-1 row-cols-md-3 g-4 mt-5 news-section">
-        {newsData && newsData.slice(1).map((news) => (
-          <div className="col news-card" key={ news.id }>
-            <Card news={ news } />
-          </div>
-        ))}
-      </section>
-      <MoreNewsButton setPage={ setPage } />
+      {newsData?.pages.map((page) => (
+        <section
+          className="row row-cols-1 row-cols-md-3 g-4 mt-5 news-section"
+          key={ page?.page }
+        >
+          {page?.items?.slice(1).map((news) => (
+            <div className="col news-card" key={ news.id }>
+              <Card news={ news } />
+            </div>
+          ))}
+        </section>
+      ))}
+      <div ref={ ref }>
+        {isFetchingNextPage && (
+          <h4 className="mt-5">Carregando...</h4>
+        )}
+      </div>
     </main>
   );
 }
 
-export default Temp;
+export default Home;

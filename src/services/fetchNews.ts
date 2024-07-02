@@ -1,15 +1,13 @@
-import { DataType, Item } from '../types';
+import { DataType } from '../types';
 
-async function fetchNews(
-  page = 10,
-) {
-  const URL = `https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=${page}`;
+async function fetchNews(pageParam: number) {
+  const URL = `https://servicodados.ibge.gov.br/api/v3/noticias/?page=${pageParam}`;
   try {
     const response = await fetch(URL);
-    const { items } = await response.json() as DataType;
+    const data = await response.json() as DataType;
 
     // Converte a string para objeto e pega somente a image_intro com a url sendo passada.
-    const data = items.map(({ imagens, ...item }) => {
+    const newItems = data.items.map(({ imagens, ...item }) => {
       const parsedImagens = JSON.parse(imagens);
       const updatedImagens = {
         image_intro: `https://agenciadenoticias.ibge.gov.br/${parsedImagens.image_intro}`,
@@ -19,9 +17,7 @@ async function fetchNews(
         imagens: updatedImagens,
       };
     });
-    console.log(data);
-
-    return data as Item[];
+    return { ...data, items: newItems };
   } catch (error) {
     console.error(error);
   }
