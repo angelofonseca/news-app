@@ -1,0 +1,15 @@
+@media (width >= 768px) {
+  .hero-card {
+    width: 80%;
+  }
+.hero-img {
+  height: 100%;
+  width: 100%;
+}
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+
+}
