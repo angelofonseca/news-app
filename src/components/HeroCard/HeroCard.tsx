@@ -1,16 +1,14 @@
 /* eslint-disable react/jsx-max-depth */
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import useFavorites from '../../hooks/useFavorites';
-import { Item } from '../../types';
+import { NewsType } from '../../types';
 import './hero-card.css';
+import FavoriteBtn from '../FavoriteBtn/FavoriteBtn';
 
-function HeroCard({ news }: { news: Item }) {
+function HeroCard({ news }: { news: NewsType }) {
   const { titulo,
     introducao,
     link,
     data_publicacao: dataPublicacao,
     imagens: { image_intro: imageIntro } } = news;
-  const { isFavorite, handleFavorite } = useFavorites(news);
   return (
     <div className="card mb-3 hero-card">
       <div className="row g-0">
@@ -20,9 +18,7 @@ function HeroCard({ news }: { news: Item }) {
             className="img-fluid rounded hero-img"
             alt="Imagem da Notícia"
           />
-          <button className="favorite-btn" onClick={ handleFavorite }>
-            {isFavorite ? <FaHeart /> : <FaRegHeart />}
-          </button>
+          <FavoriteBtn news={ news } />
         </div>
         <div className="col-md-7 hero-card-container">
           <div className="hero-card-body">

@@ -1,27 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { Item } from '../types';
+import { NewsType } from '../types';
 
-function useFavorites(news: Item) {
+function useFavorites(news: NewsType) {
+  const { id } = news;
   const [isFavorite, setIsFavorite] = useState(false);
-  const favoriteList = JSON.parse(localStorage.getItem('favorites') || '[]') as Item[];
+  const favoriteList = JSON.parse(localStorage
+    .getItem('favorites') || '[]') as NewsType[];
 
   useEffect(() => {
-    const favorites = favoriteList.some((item: Item) => item.id === news.id);
+    const favorites = favoriteList.some((favorite) => favorite.id === id);
     setIsFavorite(favorites);
-  }, [news.id]);
+  }, []);
 
   function addFavorite() {
     localStorage.setItem('favorites', JSON.stringify([...favoriteList, news]));
   }
 
   function removeFavorite() {
-    const newFavoritesList = favoriteList.filter((favorite) => favorite.id !== news.id);
+    const newFavoritesList = favoriteList.filter((favorite) => favorite.id !== id);
     localStorage.setItem('favorites', JSON.stringify(newFavoritesList));
   }
 
   function updateFavoriteList() {
-    const onFavoriteList = favoriteList.some((favorite: Item) => favorite.id === news.id);
+    const onFavoriteList = favoriteList.some((favorite) => favorite.id === id);
     return onFavoriteList ? removeFavorite() : addFavorite();
   }
 

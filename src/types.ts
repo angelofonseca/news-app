@@ -6,9 +6,9 @@ export interface DataType {
   previousPage: number;
   showingFrom: number;
   showingTo: number;
-  items: InitialItem[];
+  items: InitialNewsType[];
 }
-export interface InitialItem {
+export interface InitialNewsType {
   id: number;
   tipo: string;
   titulo: string;
@@ -22,7 +22,7 @@ export interface InitialItem {
   destaque: boolean;
   link: string;
 }
-export interface Item {
+export interface NewsType {
   id: number;
   tipo: string;
   titulo: string;

@@ -1,11 +1,9 @@
-import { FaRegHeart, FaHeart } from 'react-icons/fa';
-import { Item } from '../../types';
+import { NewsType } from '../../types';
 import './card.css';
-import useFavorites from '../../hooks/useFavorites';
+import FavoriteBtn from '../FavoriteBtn/FavoriteBtn';
 
-function Card({ news }: { news: Item }) {
+function Card({ news }: { news: NewsType }) {
   const { titulo, link, imagens: { image_intro: imageIntro } } = news;
-  const { isFavorite, handleFavorite } = useFavorites(news);
 
   return (
     <div className="card">
@@ -15,9 +13,7 @@ function Card({ news }: { news: Item }) {
           className="card-img-top card-img"
           alt="Imagem da notícia"
         />
-        <button className="favorite-btn" onClick={ handleFavorite }>
-          {isFavorite ? <FaHeart /> : <FaRegHeart />}
-        </button>
+        <FavoriteBtn news={ news } />
       </div>
       <div className="card-body">
         <a href={ link } className="card-link news-card-text">{titulo}</a>
