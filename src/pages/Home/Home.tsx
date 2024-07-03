@@ -6,6 +6,7 @@ import './home.css';
 import Card from '../../components/Card/Card';
 import Categories from '../../components/Categories/Categories';
 import useNews from '../../hooks/useNews';
+import Loading from '../../components/Loading/Loading';
 
 function Home() {
   const { ref, inView } = useInView();
@@ -15,7 +16,7 @@ function Home() {
     if (inView) fetchNextPage();
   }, [inView, fetchNextPage]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
 
   return (
     <main className="d-flex flex-column align-items-center mt-3 mb-5">
@@ -41,7 +42,7 @@ function Home() {
       ))}
       <div ref={ ref }>
         {isFetchingNextPage && (
-          <h4 className="mt-5">Carregando...</h4>
+          <Loading />
         )}
       </div>
     </main>
