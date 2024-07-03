@@ -1,0 +1,10 @@
+.favorite-btn {
+    color: red;
+    font-size: 18px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }

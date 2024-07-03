@@ -1,0 +1,10 @@
+.categories-container  {
+  list-style: none;
+  width: 100%;
+  gap: 20px;
+}
+
+.categories-btn {
+  border: none;
+  background-color: inherit;
+}

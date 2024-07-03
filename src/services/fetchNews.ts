@@ -1,10 +1,10 @@
-import { DataType } from '../types';
+import { InitialDataType } from '../types';
 
 async function fetchNews(pageParam: number) {
   const URL = `https://servicodados.ibge.gov.br/api/v3/noticias/?page=${pageParam}`;
   try {
     const response = await fetch(URL);
-    const data = await response.json() as DataType;
+    const data = await response.json() as InitialDataType;
 
     // Converte a string para objeto e pega somente a image_intro com a url sendo passada.
     const newItems = data.items.map(({ imagens, ...item }) => {

@@ -16,7 +16,13 @@ function Card({ news }: { news: NewsType }) {
         <FavoriteBtn news={ news } />
       </div>
       <div className="card-body">
-        <a href={ link } className="card-link news-card-text">{titulo}</a>
+        <a
+          href={ link }
+          className="card-link news-card-text"
+        >
+          {titulo}
+        </a>
+        <p>{news.data_publicacao}</p>
       </div>
     </div>
   );

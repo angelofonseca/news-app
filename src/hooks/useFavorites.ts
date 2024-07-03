@@ -5,25 +5,25 @@ import { NewsType } from '../types';
 function useFavorites(news: NewsType) {
   const { id } = news;
   const [isFavorite, setIsFavorite] = useState(false);
-  const favoriteList = JSON.parse(localStorage
+  const favoritesList = JSON.parse(localStorage
     .getItem('favorites') || '[]') as NewsType[];
 
   useEffect(() => {
-    const favorites = favoriteList.some((favorite) => favorite.id === id);
+    const favorites = favoritesList.some((favorite) => favorite.id === id);
     setIsFavorite(favorites);
   }, []);
 
   function addFavorite() {
-    localStorage.setItem('favorites', JSON.stringify([...favoriteList, news]));
+    localStorage.setItem('favorites', JSON.stringify([...favoritesList, news]));
   }
 
   function removeFavorite() {
-    const newFavoritesList = favoriteList.filter((favorite) => favorite.id !== id);
+    const newFavoritesList = favoritesList.filter((favorite) => favorite.id !== id);
     localStorage.setItem('favorites', JSON.stringify(newFavoritesList));
   }
 
   function updateFavoriteList() {
-    const onFavoriteList = favoriteList.some((favorite) => favorite.id === id);
+    const onFavoriteList = favoritesList.some((favorite) => favorite.id === id);
     return onFavoriteList ? removeFavorite() : addFavorite();
   }
 

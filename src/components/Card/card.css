@@ -18,11 +18,13 @@ align-items: flex-start;
 
 .news-card-text {
   max-height: 72px;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
-
 .card-link {
   text-decoration: none;
   color: black;
@@ -31,17 +33,6 @@ align-items: flex-start;
 
 .card-link:hover {
   text-decoration: underline;
-}
-
-.favorite-btn {
-  color: red;
-  font-size: 18px;
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
 }
 
 .news-card-text::-webkit-scrollbar-track {

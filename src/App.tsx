@@ -3,14 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import './App.css';
+import NewsProvider from './context/NewsProvider';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={ queryClient }>
-      <Header />
-      <Home />
+      <NewsProvider>
+        <Header />
+        <Home />
+      </NewsProvider>
     </QueryClientProvider>
   );
 }
