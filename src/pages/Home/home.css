@@ -1,15 +1,10 @@
 .hero-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .news-section {
   width: 80%;
-  justify-content: center;
-}
-
-hr {
-  border: solid 1px black;
 }

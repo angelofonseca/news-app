@@ -1,4 +1,7 @@
-export interface DataType {
+/* eslint-disable max-len */
+import { FetchNextPageOptions, InfiniteData, InfiniteQueryObserverResult } from 'react-query';
+
+export type InitialDataType = {
   count: number;
   page: number;
   totalPages: number;
@@ -6,10 +9,9 @@ export interface DataType {
   previousPage: number;
   showingFrom: number;
   showingTo: number;
-  items: InitialItem[];
-}
-
-export interface InitialItem {
+  items: InitialNewsType[];
+};
+export type InitialNewsType = {
   id: number;
   tipo: string;
   titulo: string;
@@ -22,9 +24,20 @@ export interface InitialItem {
   produtos_relacionados: string;
   destaque: boolean;
   link: string;
-}
+};
 
-export interface Item {
+export type DataType = {
+  count: number;
+  page: number;
+  totalPages: number;
+  nextPage: number;
+  previousPage: number;
+  showingFrom: number;
+  showingTo: number;
+  items: NewsType[];
+};
+
+export type NewsType = {
   id: number;
   tipo: string;
   titulo: string;
@@ -37,15 +50,20 @@ export interface Item {
   produtos_relacionados: string;
   destaque: boolean;
   link: string;
-}
+};
 
-interface Imagens {
+type Imagens = {
   image_intro: string;
-  float_intro: string;
-  image_intro_alt: string;
-  image_intro_caption: string;
-  image_fulltext: string;
-  float_fulltext: string;
-  image_fulltext_alt: string;
-  image_fulltext_caption: string;
-}
+};
+
+export type NewsContextType = {
+  category: CategoriesType;
+  setCategory: React.Dispatch<React.SetStateAction<CategoriesType>>;
+  isLoading: boolean;
+  isFetchingNextPage: boolean;
+  newsData: InfiniteData<DataType | undefined> | undefined;
+  fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<DataType | undefined, unknown>>;
+  handleCategory: (param: CategoriesType) => void;
+};
+
+export type CategoriesType = 'recentes' | 'release' | 'noticia' | 'favoritas';

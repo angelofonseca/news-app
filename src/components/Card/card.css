@@ -1,4 +1,5 @@
 .card {
+  background-color: inherit;
   border: none;
 }
 
@@ -6,14 +7,42 @@
   height: 10rem;
 }
 
+.card-body {
+  align-items: flex-start;
+  display: flex;
+}
+
 .news-card {
+  height: 18rem;
   width: 18rem;
-  height: 16rem;
+}
+
+.news-card-date {
+  font-size: 0.8rem;
 }
 
 .news-card-text {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-clamp: 3;
   max-height: 72px;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.card {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.card-link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-link:hover {
+  text-decoration: underline;
 }

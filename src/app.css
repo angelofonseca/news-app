@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+@media (width >= 768px) {
+  .hero-card {
+    width: 80%;
+  }
+
+  .hero-img {
+    width: 100%;
+  }
+}
+
+@media (width < 768px) {
+  .hero-card-body {
+    margin-top: 2rem;
+  }
+
+  .hero-img {
+    border-radius: 0 !important;
+  }
+}

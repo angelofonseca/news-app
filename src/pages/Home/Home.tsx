@@ -1,46 +1,39 @@
-import { useQuery } from 'react-query';
-import { useState } from 'react';
-import fetchNews from '../../services/fetchNews';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 import { mockFetchNews } from '../../utils/mockFetch';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import './home.css';
-import Card from '../../components/Card/Card';
-import MoreNewsButton from '../../components/MoreNewsButton/MoreNewsButton';
+import Categories from '../../components/Categories/Categories';
+import useNews from '../../hooks/useNews';
+import Loading from '../../components/Loading/Loading';
+import RenderCategory from '../../components/RenderCategory/RenderCategory';
 
-function Temp() {
-  const [page, setPage] = useState(12);
-  const { data: newsData, isLoading, isError } = useQuery({
-    queryFn: () => fetchNews(page),
-    queryKey: ['news', page],
-  });
+function Home() {
+  const { ref, inView } = useInView();
+  const { isFetchingNextPage, newsData, isLoading, fetchNextPage } = useNews();
 
-  if (isLoading) return <h4>Carregando...</h4>;
+  useEffect(() => {
+    if (inView) fetchNextPage();
+  }, [inView, fetchNextPage]);
 
-  if (isError) {
-    return (
-      <div>
-        <h4>Algo deu errado!</h4>
-      </div>
-    );
-  }
+  if (isLoading) return <Loading />;
 
   return (
-    <main className="d-flex flex-column align-items-center mt-3 mb-3">
-      {newsData && (
+    <main className="d-flex flex-column align-items-center mt-3 mb-5">
+      {newsData?.pages[0]?.items[0] && (
         <section className="hero-container">
-          <HeroCard news={ newsData[0] } />
+          <HeroCard news={ newsData.pages[0]?.items[0] } />
         </section>
       )}
-      <section className="row row-cols-1 row-cols-md-3 g-4 mt-5 news-section">
-        {newsData && newsData.slice(1).map((news) => (
-          <div className="col news-card" key={ news.id }>
-            <Card news={ news } />
-          </div>
-        ))}
-      </section>
-      <MoreNewsButton setPage={ setPage } />
+      <Categories />
+      <RenderCategory />
+      <div ref={ ref }>
+        {isFetchingNextPage && (
+          <Loading />
+        )}
+      </div>
     </main>
   );
 }
 
-export default Temp;
+export default Home;
