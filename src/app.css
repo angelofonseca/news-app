@@ -4,9 +4,17 @@
   padding: 0;
 }
 
+body {
+  background-color: #f0f0f0;
+}
+
 @media (width >= 768px) {
   .hero-card {
     width: 80%;
+  }
+
+  .hero-img {
+    width: 100%;
   }
 }
 

@@ -21,13 +21,17 @@ function Favorites() {
   }, []);
 
   return (
-    <>
-      {favorites.map((news) => (
-        <div className="col news-card" key={ news.id }>
-          <Card news={ news } />
-        </div>
-      ))}
-    </>
+    <div>
+      {favorites.length > 0
+        ? (favorites.map((news) => (
+          <div className="col news-card" key={ news.id }>
+            <Card news={ news } />
+          </div>
+        )))
+        : (
+          <h2 className="mt-5">Não há notícias favoritadas</h2>
+        )}
+    </div>
   );
 }
 

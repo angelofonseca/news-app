@@ -22,7 +22,7 @@ function HeroCard({ news }: { news: NewsType }) {
         </div>
         <div className="col-md-7 hero-card-container">
           <div className="hero-card-body">
-            <b className="text-danger">Notícia mais recente</b>
+            <b className="text-primary">Notícia mais recente</b>
             <h4 className="hero-card-title">{titulo}</h4>
 
             <small className="text-body-secondary">{dataPublicacao}</small>

@@ -13,24 +13,27 @@ function Card({ news }: { news: NewsType }) {
   const date = formatDate(dataPublicacao);
 
   return (
-    <a className="card" href={ link }>
+    <div className="card">
       <div>
-        <img
-          src={ imageIntro }
-          className="card-img-top card-img"
-          alt="Imagem da notícia"
-        />
+        <a href={ link }>
+          <img
+            src={ imageIntro }
+            className="card-img-top card-img"
+            alt="Imagem da notícia"
+          />
+        </a>
         <FavoriteBtn news={ news } />
       </div>
       <small className="text-body-secondary news-card-date">{date}</small>
       <div className="card-body p-0 mt-2">
-        <p
+        <a
+          href={ link }
           className="card-link news-card-text"
         >
           {titulo}
-        </p>
+        </a>
       </div>
-    </a>
+    </div>
   );
 }
 
