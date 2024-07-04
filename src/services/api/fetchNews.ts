@@ -1,4 +1,4 @@
-import { InitialDataType } from '../types';
+import { InitialDataType } from '../../types';
 
 async function fetchNews(pageParam: number, category: string) {
   let URL;

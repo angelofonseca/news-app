@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import NewsContext from './NewsContext';
 import { CategoriesType } from '../types';
-import fetchNews from '../services/fetchNews';
+import fetchNews from '../services/api/fetchNews';
 
 function NewsProvider({ children }: { children: React.ReactNode }) {
   const [category, setCategory] = useState<CategoriesType>('recentes');
