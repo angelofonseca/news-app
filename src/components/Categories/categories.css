@@ -1,10 +1,23 @@
 .categories-container  {
+  gap: 1rem;
   list-style: none;
   width: 100%;
-  gap: 20px;
 }
 
 .categories-btn {
-  border: none;
   background-color: inherit;
+  border: none;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.selected::after{
+  background: red;
+  border-radius: 1rem;
+  content: '';
+  display: block;
+  height: 0.2rem;
+  margin-top: -0.2rem;
 }

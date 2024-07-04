@@ -1,14 +1,25 @@
 import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import useFavorite from '../../hooks/useFavorites';
 import { NewsType } from '../../types';
 
 function Favorites() {
+  const { getFavoritesList } = useFavorite();
   const [favorites, setFavorites] = useState<NewsType[]>([]);
+
   useEffect(() => {
-    const getFavoritesList = JSON
-      .parse(localStorage.getItem('favorites') || '[]') as NewsType[];
-    setFavorites(getFavoritesList);
+    const updateFavorites = () => {
+      setFavorites(getFavoritesList());
+    };
+
+    updateFavorites();
+
+    window.addEventListener('favoriteRemoved', updateFavorites);
+
+    return () => window.removeEventListener('favoriteRemoved', updateFavorites);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
       {favorites.map((news) => (

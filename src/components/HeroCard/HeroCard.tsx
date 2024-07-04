@@ -24,8 +24,10 @@ function HeroCard({ news }: { news: NewsType }) {
           <div className="hero-card-body">
             <b className="text-danger">Notícia mais recente</b>
             <h4 className="hero-card-title">{titulo}</h4>
+
             <small className="text-body-secondary">{dataPublicacao}</small>
             <p className="hero-card-text">{introducao}</p>
+
             <div className="d-flex justify-content-between">
               <a className="btn btn-primary btn-sm" href={ link }>Link da Notícia</a>
             </div>

@@ -57,12 +57,13 @@ type Imagens = {
 };
 
 export type NewsContextType = {
-  categorie: CategoriesType;
-  setCategorie: React.Dispatch<React.SetStateAction<CategoriesType>>;
+  category: CategoriesType;
+  setCategory: React.Dispatch<React.SetStateAction<CategoriesType>>;
   isLoading: boolean;
   isFetchingNextPage: boolean;
   newsData: InfiniteData<DataType | undefined> | undefined;
   fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<DataType | undefined, unknown>>;
+  handleCategory: (param: CategoriesType) => void;
 };
 
 export type CategoriesType = 'recentes' | 'release' | 'noticia' | 'favoritas';

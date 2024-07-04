@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import NewsContext from './NewsContext';
 import { CategoriesType } from '../types';
 import fetchNews from '../services/fetchNews';
 
 function NewsProvider({ children }: { children: React.ReactNode }) {
-  const [categorie, setCategorie] = useState<CategoriesType>('noticia');
+  const [category, setCategory] = useState<CategoriesType>('recentes');
 
   const {
     data: newsData,
@@ -13,18 +13,30 @@ function NewsProvider({ children }: { children: React.ReactNode }) {
     isLoading,
     isFetchingNextPage,
   } = useInfiniteQuery({
-    queryKey: ['newsData'],
-    queryFn: ({ pageParam = 1 }) => fetchNews(pageParam),
+    queryKey: ['newsData', category],
+    queryFn: ({ pageParam = 1 }) => fetchNews(pageParam, category),
     getNextPageParam: (lastPage) => lastPage?.nextPage,
   });
+
+  useEffect(() => {
+    const getCategory = localStorage.getItem('category');
+    if (!getCategory) return localStorage.setItem('category', JSON.stringify(category));
+    setCategory(JSON.parse(getCategory));
+  }, []);
+
+  function handleCategory(param: CategoriesType) {
+    setCategory(param);
+    localStorage.setItem('category', JSON.stringify(param));
+  }
 
   const value = {
     newsData,
     isFetchingNextPage,
     isLoading,
-    categorie,
-    setCategorie,
+    category,
+    setCategory,
     fetchNextPage,
+    handleCategory,
   };
 
   return (

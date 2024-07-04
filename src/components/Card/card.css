@@ -7,49 +7,36 @@
 }
 
 .card-body {
-display: flex;
-align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
 }
 
 .news-card {
+  height: 18rem;
   width: 18rem;
-  height: 16rem;
+}
+
+.news-card-date {
+  font-size: 0.8rem;
 }
 
 .news-card-text {
-  max-height: 72px;
-  display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-clamp: 3;
+  max-height: 72px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
 }
-.card-link {
-  text-decoration: none;
+
+.card {
   color: black;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .card-link:hover {
   text-decoration: underline;
-}
-
-.news-card-text::-webkit-scrollbar-track {
-  background-color: #f0f0f0;
-}
-
-/* Style the scrollbar handle */
-.news-card-text::-webkit-scrollbar-thumb {
-  background-color: #c0c0c0;
-  border-radius: 10px;
-}
-
-.news-card-text::-webkit-scrollbar-thumb:hover {
-  background-color: #a0a0a0;
-}
-
-.news-card-text::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
 }

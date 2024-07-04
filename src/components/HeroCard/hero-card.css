@@ -1,13 +1,9 @@
-@media (width >= 768px) {
-  .hero-card {
-    width: 80%;
-  }
-}
 .hero-card-body {
   width: 80%;
 }
+
 .hero-card-container {
-display: flex;
-justify-content: center;
-align-items: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }

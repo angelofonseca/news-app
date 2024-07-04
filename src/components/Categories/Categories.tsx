@@ -2,30 +2,32 @@ import useNews from '../../hooks/useNews';
 import './categories.css';
 
 function Categories() {
-  const { setCategorie } = useNews();
+  const { category, handleCategory } = useNews();
+
   return (
     <div className="d-flex justify-content-center categories-container p-4">
       <button
-        className="categories-btn"
-        onClick={ () => setCategorie('recentes') }
+        className={ `categories-btn ${category === 'recentes' ? 'selected' : ''}` }
+        name="recentes"
+        onClick={ () => handleCategory('recentes') }
       >
         Mais Recentes
       </button>
       <button
-        className="categories-btn"
-        onClick={ () => setCategorie('release') }
+        className={ `categories-btn ${category === 'release' ? 'selected' : ''}` }
+        onClick={ () => handleCategory('release') }
       >
         Release
       </button>
       <button
-        className="categories-btn"
-        onClick={ () => setCategorie('noticia') }
+        className={ `categories-btn ${category === 'noticia' ? 'selected' : ''}` }
+        onClick={ () => handleCategory('noticia') }
       >
         Notícia
       </button>
       <button
-        className="categories-btn"
-        onClick={ () => setCategorie('favoritas') }
+        className={ `categories-btn ${category === 'favoritas' ? 'selected' : ''}` }
+        onClick={ () => handleCategory('favoritas') }
       >
         Favoritas
       </button>

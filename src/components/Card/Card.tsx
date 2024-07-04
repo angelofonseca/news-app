@@ -1,12 +1,19 @@
 import { NewsType } from '../../types';
 import './card.css';
 import FavoriteBtn from '../FavoriteBtn/FavoriteBtn';
+import formatDate from '../../utils/formatDate';
 
 function Card({ news }: { news: NewsType }) {
-  const { titulo, link, imagens: { image_intro: imageIntro } } = news;
+  const { titulo,
+    data_publicacao: dataPublicacao,
+    link,
+    imagens: { image_intro: imageIntro },
+  } = news;
+
+  const date = formatDate(dataPublicacao);
 
   return (
-    <div className="card">
+    <a className="card" href={ link }>
       <div>
         <img
           src={ imageIntro }
@@ -15,16 +22,15 @@ function Card({ news }: { news: NewsType }) {
         />
         <FavoriteBtn news={ news } />
       </div>
-      <div className="card-body">
-        <a
-          href={ link }
+      <small className="text-body-secondary news-card-date">{date}</small>
+      <div className="card-body p-0 mt-2">
+        <p
           className="card-link news-card-text"
         >
           {titulo}
-        </a>
-        <p>{news.data_publicacao}</p>
+        </p>
       </div>
-    </div>
+    </a>
   );
 }
 
