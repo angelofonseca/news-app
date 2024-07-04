@@ -1,10 +1,10 @@
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import useFavorites from '../../hooks/useFavorites';
 import { NewsType } from '../../types';
 import './favorite-btn.css';
+import useFavorite from '../../hooks/useFavorite';
 
 function FavoriteBtn({ news }: { news: NewsType }) {
-  const { isFavorite, handleFavorite } = useFavorites(news);
+  const { isFavorite, handleFavorite } = useFavorite(news);
 
   return (
     <button className="favorite-btn" onClick={ handleFavorite }>

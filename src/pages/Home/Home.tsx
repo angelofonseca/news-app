@@ -7,6 +7,7 @@ import Card from '../../components/Card/Card';
 import Categories from '../../components/Categories/Categories';
 import useNews from '../../hooks/useNews';
 import Loading from '../../components/Loading/Loading';
+import RenderCategory from '../../components/RenderCategory/RenderCategory';
 
 function Home() {
   const { ref, inView } = useInView();
@@ -25,21 +26,8 @@ function Home() {
           <HeroCard news={ newsData.pages[0]?.items[0] } />
         </section>
       )}
-      {newsData?.pages.map((page) => (
-        <section
-          className="news-section"
-          key={ page?.page }
-        >
-          <Categories />
-          <div className="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
-            {page?.items?.slice(1).map((news) => (
-              <div className="col news-card" key={ news.id }>
-                <Card news={ news } />
-              </div>
-            ))}
-          </div>
-        </section>
-      ))}
+      <Categories />
+      <RenderCategory />
       <div ref={ ref }>
         {isFetchingNextPage && (
           <Loading />

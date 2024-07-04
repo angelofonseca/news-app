@@ -62,7 +62,7 @@ export type NewsContextType = {
   isLoading: boolean;
   isFetchingNextPage: boolean;
   newsData: InfiniteData<DataType | undefined> | undefined;
-  fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<DataType | undefined, unknown>>
+  fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<DataType | undefined, unknown>>;
 };
 
 export type CategoriesType = 'recentes' | 'release' | 'noticia' | 'favoritas';

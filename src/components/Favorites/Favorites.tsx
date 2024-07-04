@@ -1,13 +1,17 @@
-import { NewsType } from '../../types';
+import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import { NewsType } from '../../types';
 
 function Favorites() {
-  const favoritesList = JSON.parse(localStorage
-    .getItem('favorites') || '[]') as NewsType[];
-
+  const [favorites, setFavorites] = useState<NewsType[]>([]);
+  useEffect(() => {
+    const getFavoritesList = JSON
+      .parse(localStorage.getItem('favorites') || '[]') as NewsType[];
+    setFavorites(getFavoritesList);
+  }, []);
   return (
     <>
-      {favoritesList.map((news) => (
+      {favorites.map((news) => (
         <div className="col news-card" key={ news.id }>
           <Card news={ news } />
         </div>
