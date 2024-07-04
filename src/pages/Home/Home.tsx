@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { mockFetchNews } from '../../utils/mockFetch';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import './home.css';
-import Card from '../../components/Card/Card';
 import Categories from '../../components/Categories/Categories';
 import useNews from '../../hooks/useNews';
 import Loading from '../../components/Loading/Loading';

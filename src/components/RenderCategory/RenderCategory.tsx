@@ -12,7 +12,7 @@ function RenderCategory() {
             className="news-section"
             key={ page?.page }
           >
-            <div className="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
               {page?.items?.slice(1).map((news) => (
                 <div className="col news-card" key={ news.id }>
                   <Card news={ news } />

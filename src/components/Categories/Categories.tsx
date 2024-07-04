@@ -4,7 +4,7 @@ import './categories.css';
 function Categories() {
   const { setCategorie } = useNews();
   return (
-    <div className="d-flex justify-content-center categories-container mt-5">
+    <div className="d-flex justify-content-center categories-container p-4">
       <button
         className="categories-btn"
         onClick={ () => setCategorie('recentes') }
