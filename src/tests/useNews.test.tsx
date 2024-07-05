@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 
 describe('Testa o hook useNews', () => {
   beforeEach(() => {
-    vi.spyOn(global, 'fetch')
+    vi.spyOn(window, 'fetch')
       .mockResolvedValue(MOCK_TRUE_RESPONSE);
   });
   afterEach(() => { vi.clearAllMocks(); });

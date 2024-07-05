@@ -10,7 +10,7 @@ mockAllIsIntersecting(false);
 
 describe('Testa o fetchNews', () => {
   beforeEach(() => {
-    vi.spyOn(global, 'fetch')
+    vi.spyOn(window, 'fetch')
       .mockResolvedValue(MOCK_TRUE_RESPONSE);
   });
   afterEach(() => { vi.clearAllMocks(); });
