@@ -5,7 +5,7 @@ function Categories() {
   const { category, handleCategory } = useNews();
 
   return (
-    <div className="d-flex justify-content-center categories-container p-4">
+    <div className="d-flex justify-content-around categories-container pb-3 pt-4">
       <button
         className={ `categories-btn ${category === 'recentes' ? 'selected' : ''}` }
         name="recentes"
