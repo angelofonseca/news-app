@@ -2,8 +2,6 @@
 
 A aplicação permite aos usuários listar as notícias mais recentes, com a possibilidade de filtrar por categorias ou palavras-chave específicas. Cada notícia exibida inclui um link para acesso direto, a data de publicação e uma opção para marcar como favorita. Tudo isso é possível graças à integração com a API gratuita de notícias do IBGE v3, garantindo informações constantes e precisas.
 
-## Vercel
-
 [Visite a aplicação](https://your-news-dz7n4plel-angelo-fonsecas-projects.vercel.app/)
 
 ## Pré-requisitos
