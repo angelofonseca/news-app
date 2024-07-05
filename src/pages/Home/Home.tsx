@@ -1,6 +1,5 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import { mockFetchNews } from '../../utils/mockFetch';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import './home.css';
 import Categories from '../../components/Categories/Categories';
