@@ -27,3 +27,16 @@ body {
     border-radius: 0 !important;
   }
 }
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-toggle {
+  background-color: inherit !important;
+  border: none;
+}
+
+.dropdown-menu {
+  background-color: #f0f0f0;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import useFavorite from '../../hooks/useFavorites';
 import { NewsType } from '../../types';
+import './favorites.css';
 
 function Favorites() {
   const { getFavoritesList } = useFavorite();
@@ -21,7 +22,7 @@ function Favorites() {
   }, []);
 
   return (
-    <div>
+    <section className="favorites-section">
       {favorites.length > 0
         ? (favorites.map((news) => (
           <div className="col news-card" key={ news.id }>
@@ -31,7 +32,7 @@ function Favorites() {
         : (
           <h2 className="mt-5">Não há notícias favoritadas</h2>
         )}
-    </div>
+    </section>
   );
 }
 
