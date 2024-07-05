@@ -23,7 +23,7 @@ function Favorites() {
   }, []);
 
   return (
-    <section className="favorites-section row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    <section className={ `${favorites.length > 0 && 'favorites-section row row-cols-1 row-cols-md-3 g-4 justify-content-center'}` }>
       {favorites.length > 0
         ? (favorites.map((news) => (
           <div className="col news-card" key={ news.id }>
@@ -31,7 +31,7 @@ function Favorites() {
           </div>
         )))
         : (
-          <h2 className="mt-5">Não há notícias favoritadas</h2>
+          <h2 className="favorites-section">Não há notícias favoritadas...</h2>
         )}
     </section>
   );
