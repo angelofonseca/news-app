@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'MerriWeather'; /* Corrected name to match usage */
-  src: url('./fonts/Merriweather-Regular.ttf') format('truetype'); /* Corrected format value */
-  font-weight: normal;
+  font-family: 'MerriWeather';
   font-style: normal;
+  font-weight: normal;
+  src: url('./fonts/Merriweather-Regular.ttf') format('truetype');
 }
 
 * {
@@ -17,6 +17,9 @@ body {
 }
 
 @media (width >= 768px) {
+  .page-title {
+    margin-left: 16%
+  }
   .hero-card {
     width: 80%;
   }

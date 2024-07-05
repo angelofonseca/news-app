@@ -21,7 +21,7 @@ function Header() {
       <button className="logo-btn" onClick={ () => setCategory('recentes') }>
         <img src={ logoNews } alt="" className="logo" />
       </button>
-      <h1 className="mb-0 text-center">YOUR NEWS</h1>
+      <h1 className="mb-0 page-title">YOUR NEWS</h1>
       {windowWidth < 768 ? (
         <DropDownBtn />
       ) : (
