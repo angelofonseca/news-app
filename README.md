@@ -4,12 +4,25 @@ A aplicação permite aos usuários listar as notícias mais recentes, com a pos
 
 ## Pré-requisitos
 
-- Node.js v18.19.1
-- npm v10.2.4
+- Node.js v18.19.1;
+- npm v10.2.4;
+
+## Dependências
+
+- Bootstrap v5.3.3;
+- react-dom v18.3.1;
+- react-icons v5.2.1;
+- react-intersection-observer v9.10.3;
+- react-query: 3.39.3;
+- react-spinners: 0.14.1;
+
+## Testes
+
+Para realizar os testes foi utilizado o Vitest e Jest;
 
 ## Instalação
 
-1. Clone o repositório:
+1. Clone o repositório e instale as dependências:
 
    ```bash
    git clone https://github.com/angelofonseca/news-app.git
