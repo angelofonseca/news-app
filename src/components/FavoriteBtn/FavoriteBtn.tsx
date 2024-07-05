@@ -8,7 +8,11 @@ function FavoriteBtn({ news }: { news: NewsType }) {
   const isFavorite = getFavoritesList().some((favorite) => favorite.id === news.id);
 
   return (
-    <button className="favorite-btn" onClick={ () => handleFavorite(news) }>
+    <button
+      className="favorite-btn"
+      data-testid="heart-icon"
+      onClick={ () => handleFavorite(news) }
+    >
       {isFavorite ? <FaHeart /> : <FaRegHeart />}
     </button>
   );
