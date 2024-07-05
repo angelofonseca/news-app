@@ -7,3 +7,8 @@
   display: flex;
   justify-content: center;
 }
+
+.hero-img-container > .favorite-btn {
+  right: 1rem;
+  top: 0;
+}

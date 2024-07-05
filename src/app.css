@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'MerriWeather'; /* Corrected name to match usage */
+  src: url('./fonts/Merriweather-Regular.ttf') format('truetype'); /* Corrected format value */
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'MerriWeather', sans-serif;
 }
 
 body {

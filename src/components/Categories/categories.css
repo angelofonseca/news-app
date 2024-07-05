@@ -12,14 +12,14 @@
 
 .categories-btn {
   background-color: inherit;
-  color: black;
+  color: #E0E1DD;
   border: none;
 }
 
 .selected {
   font-weight: bold;
 }
-
+/* 
 .selected::after{
   background: #0d6efd;
   border-radius: 1rem;
@@ -27,4 +27,4 @@
   display: block;
   height: 0.2rem;
   margin-top: -0.2rem;
-}
+} */

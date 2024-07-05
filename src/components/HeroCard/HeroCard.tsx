@@ -12,7 +12,7 @@ function HeroCard({ news }: { news: NewsType }) {
   return (
     <div className="card mb-3 hero-card">
       <div className="row g-0 align-items-center">
-        <div className="col-md-5">
+        <div className="col-md-5 hero-img-container">
           <img
             src={ imageIntro }
             className="img-fluid rounded hero-img"

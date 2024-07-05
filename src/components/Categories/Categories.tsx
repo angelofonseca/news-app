@@ -5,7 +5,7 @@ function Categories() {
   const { category, handleCategory } = useNews();
 
   return (
-    <div className="d-flex justify-content-around categories-container pb-3 pt-4">
+    <div className="d-flex gap-3">
       <button
         className={ `categories-btn ${category === 'recentes' ? 'selected' : ''}` }
         name="recentes"
@@ -26,7 +26,7 @@ function Categories() {
         Notícia
       </button>
       <button
-        className={ `categories-btn ${category === 'favoritas' ? 'selected' : ''}` }
+        className={ `categories-btn me-3 ${category === 'favoritas' ? 'selected' : ''}` }
         onClick={ () => handleCategory('favoritas') }
       >
         Favoritas

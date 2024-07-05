@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import useFavorite from '../../hooks/useFavorites';
@@ -22,7 +23,7 @@ function Favorites() {
   }, []);
 
   return (
-    <section className="favorites-section">
+    <section className="favorites-section row row-cols-1 row-cols-md-3 g-4 justify-content-center">
       {favorites.length > 0
         ? (favorites.map((news) => (
           <div className="col news-card" key={ news.id }>

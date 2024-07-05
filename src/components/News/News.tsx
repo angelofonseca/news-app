@@ -6,7 +6,7 @@ function News() {
   return (
     newsData?.pages.map((page) => (
       <section
-        className="news-section"
+        className="news-section mt-5"
         key={ page?.page }
       >
         <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
