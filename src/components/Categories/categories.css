@@ -1,3 +1,9 @@
+@media (width >= 440px) {
+  .categories-container  {
+    justify-content: center !important;
+  }
+}
+
 .categories-container  {
   gap: 1rem;
   list-style: none;
@@ -6,6 +12,7 @@
 
 .categories-btn {
   background-color: inherit;
+  color: black;
   border: none;
 }
 
