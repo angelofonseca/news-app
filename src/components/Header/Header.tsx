@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import './header.css';
 import { useEffect, useState } from 'react';
-import logoNews from '../../images/news-publishing-svgrepo-com .svg';
+import logoNews from '../../images/logo64.svg';
 import useNews from '../../hooks/useNews';
 import Categories from '../Categories/Categories';
 import DropDownBtn from '../DropDownBtn/DropDownBtn';
