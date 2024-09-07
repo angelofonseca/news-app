@@ -11,7 +11,8 @@ A aplicação permite aos usuários listar as notícias mais recentes, com a pos
 
 ## Dependências
 
-- Bootstrap v5.3.3;
+- bootstrap v5.3.3;
+- react-bootstrap v2.10.4;
 - react-dom v18.3.1;
 - react-icons v5.2.1;
 - react-intersection-observer v9.10.3;
