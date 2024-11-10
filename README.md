@@ -4,6 +4,11 @@ A aplicação permite aos usuários listar as notícias mais recentes, com a pos
 
 [Visite a aplicação](https://your-news-dz7n4plel-angelo-fonsecas-projects.vercel.app/)
 
+## Técnologias usadas
+
+Front-end:
+> Desenvolvido usando: React, Typescript, TanStack Query, CSS, Bootstrap.
+
 ## Pré-requisitos
 
 - Node.js v18.19.1;
